@@ -10,7 +10,7 @@ body, h1, h2, p, ul {
 .logos {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between the two logos */
+    gap: 15px; /* Space between the two logos */
 }
 
 /* Logo styling */
@@ -22,8 +22,12 @@ body, h1, h2, p, ul {
     height: 90px; /* Adjust the height of the logos */
     width: auto; /* Maintain aspect ratio */
 }
-.head{
+.content{
+    flex-grow: 1; /* Allows text to expand and stay in center */
     text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #002b5c; /* Dark blue */
 }
 header {
     background-color: rgb(179, 174, 174); /* White background for the header */
@@ -96,16 +100,7 @@ header {
     color: #f39c12;
 }
 
-/* Content Styles */
-.content {
-    
-    padding: 20px;
-    text-align: center;
-}
 
-.content h1 {
-    margin-bottom: 20px;
-}
 
 /* About section styles */
 .about {
@@ -125,7 +120,7 @@ header {
 }
 /* Slideshow container */
 .slideshow-container {
-    max-width: 1400px; /* Adjust as needed */
+    max-width: 1600px; /* Adjust as needed */
     position: relative;
     margin: auto;
 }
@@ -139,7 +134,7 @@ header {
 .slide img {
     width: 100%;
     height: auto;
-    border-radius: 10px; /* Optional: Rounded corners */
+    border-radius: 100 px; /* Optional: Rounded corners */
 }
 
 /* Navigation buttons (prev & next) */
@@ -233,6 +228,54 @@ header {
         transform: translateX(-100%); /* Move to the left */
     }
 }
+.updates-section {
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    background: white;
+    padding: 50px;
+    margin-top: 10px;
+}
+
+.update-card {
+    background: #f9be08;
+    color: rgb(12, 6, 6);
+    padding: 60px;
+    text-align: center;
+    border-radius: 100px;
+    width: 400px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.new-badge {
+    display: inline-block;
+    background: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.update-btn {
+    background: white;
+    color: #002b5c;
+    border: 2px solid #ff5722;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.update-btn:hover {
+    background: #ff5722;
+    color: white;
+}
+
 /* Footer styles */
 footer {
     background-color: #333;
