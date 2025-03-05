@@ -1,0 +1,236 @@
+/* Main Layout */
+:root {
+    --sidebar-width: 250px;
+    --primary-color: #ffd700;    /* Yellow */
+    --secondary-color: #000000;  /* Black */
+    --success-color: #ffd700;    /* Yellow */
+    --info-color: #ffd700;       /* Yellow */
+    --warning-color: #ffd700;    /* Yellow */
+    --danger-color: #ff0000;     /* Red for important alerts */
+    --light-color: #ffffff;      /* White */
+    --dark-color: #000000;       /* Black */
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+/* Sidebar */
+#sidebar {
+    min-width: var(--sidebar-width);
+    max-width: var(--sidebar-width);
+    background: var(--secondary-color);
+    color: var(--light-color);
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: calc(-1 * var(--sidebar-width));
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+}
+
+#sidebar ul li a {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    display: block;
+    color: var(--light-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+#sidebar ul li a:hover {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#sidebar ul li.active > a {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+#sidebar ul li a i {
+    margin-right: 10px;
+}
+
+/* Content */
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all 0.3s;
+    background-color: #f8f9fc;
+}
+
+/* Navbar */
+.navbar {
+    padding: 15px 10px;
+    background: var(--light-color);
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 0, 0, 0.15);
+}
+
+#sidebarCollapse {
+    background: var(--primary-color);
+    border: none;
+    color: var(--secondary-color);
+}
+
+/* Stats Cards */
+.stat-card {
+    border: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+    background: var(--light-color);
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border: 1px solid var(--primary-color);
+}
+
+.stat-card .card-body {
+    padding: 1.25rem;
+}
+
+.stat-card h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+    color: var(--secondary-color);
+}
+
+.stat-card .card-title {
+    color: var(--secondary-color);
+}
+
+/* Project Table */
+.table {
+    margin-bottom: 0;
+}
+
+.progress {
+    height: 8px;
+    margin: 8px 0;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 0, 0, 0.15);
+    background: var(--light-color);
+}
+
+.card-header {
+    background: var(--light-color);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: var(--secondary-color);
+}
+
+/* Activity Feed */
+.activity-feed {
+    padding: 15px;
+}
+
+.activity-item {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-item i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.activity-item small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+}
+
+/* Badge Customization */
+.badge.bg-success {
+    background-color: var(--primary-color) !important;
+    color: var(--secondary-color);
+}
+
+.badge.bg-warning {
+    background-color: var(--warning-color) !important;
+    color: var(--secondary-color);
+}
+
+/* Dropdown Customization */
+.dropdown-menu {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(0, 0, 0, 0.15);
+    border: none;
+    background: var(--light-color);
+}
+
+.dropdown-item {
+    color: var(--secondary-color);
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.dropdown-item:active {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: calc(-1 * var(--sidebar-width));
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+}
+
+/* Utility Classes */
+.bg-gradient-primary {
+    background: linear-gradient(180deg, var(--primary-color) 10%, #224abe 100%);
+}
+
+.dropdown-menu {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    border: none;
+}
+
+.dropdown-item:active {
+    background-color: var(--primary-color);
+}

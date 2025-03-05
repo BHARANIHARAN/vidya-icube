@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IC Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <h3>IC Dashboard</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-project-diagram"></i> Projects</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-users"></i> Teams</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-tasks"></i> Tasks</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="notificationDropdown" data-bs-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge bg-danger">3</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">New project assigned</a></li>
+                                <li><a class="dropdown-item" href="#">Team meeting in 1 hour</a></li>
+                                <li><a class="dropdown-item" href="#">Task deadline approaching</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown ms-3">
+                            <button class="btn btn-link dropdown-toggle d-flex align-items-center" type="button" id="profileDropdown" data-bs-toggle="dropdown">
+                                <img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="Profile">
+                                <span>John Doe</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">Profile</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid py-4">
+                <!-- Statistics Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Projects</h5>
+                                <h2 class="card-text">24</h2>
+                                <p class="card-text text-success"><i class="fas fa-arrow-up"></i> 12% increase</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Active Teams</h5>
+                                <h2 class="card-text">8</h2>
+                                <p class="card-text text-success"><i class="fas fa-arrow-up"></i> 5% increase</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Tasks Completed</h5>
+                                <h2 class="card-text">156</h2>
+                                <p class="card-text text-success"><i class="fas fa-arrow-up"></i> 8% increase</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card stat-card">
+                            <div class="card-body">
+                                <h5 class="card-title">Active Members</h5>
+                                <h2 class="card-text">42</h2>
+                                <p class="card-text text-success"><i class="fas fa-arrow-up"></i> 15% increase</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects and Activities -->
+                <div class="row">
+                    <!-- Project Status -->
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Current Projects</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Project Name</th>
+                                                <th>Team Lead</th>
+                                                <th>Progress</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>AI Innovation Hub</td>
+                                                <td>Sarah Johnson</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge bg-success">On Track</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Smart City Solution</td>
+                                                <td>Mike Chen</td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 45%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="badge bg-warning">In Progress</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activities -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Recent Activities</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="activity-feed">
+                                    <div class="activity-item">
+                                        <i class="fas fa-check-circle text-success"></i>
+                                        <span>New team member added to Project Alpha</span>
+                                        <small class="text-muted">2 hours ago</small>
+                                    </div>
+                                    <div class="activity-item">
+                                        <i class="fas fa-file-alt text-primary"></i>
+                                        <span>Project documentation updated</span>
+                                        <small class="text-muted">4 hours ago</small>
+                                    </div>
+                                    <div class="activity-item">
+                                        <i class="fas fa-tasks text-warning"></i>
+                                        <span>New task assigned to Team Beta</span>
+                                        <small class="text-muted">Yesterday</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
