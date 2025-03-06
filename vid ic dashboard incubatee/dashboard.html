@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incubatee Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #212529;
+            --accent-color: #ffc107;
+            --text-dark: #212529;
+            --text-light: #ffffff;
+        }
+        
+        .sidebar {
+            min-height: 100vh;
+            background: var(--secondary-color);
+            border-right: 3px solid var(--primary-color);
+            transition: all 0.3s;
+            margin-left: -100%;
+            position: fixed;
+            z-index: 1000;
+            width: 250px;
+        }
+        
+        .sidebar.active {
+            margin-left: 0;
+        }
+        
+        #sidebarToggle {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 1001;
+            background: var(--primary-color);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .main-content {
+            margin-left: 0;
+            width: 100%;
+            padding: 20px;
+            padding-top: 80px;
+        }
+        
+        .main-content.sidebar-active {
+            padding-left: 270px;
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                margin-left: 0;
+            }
+            
+            .main-content {
+                padding-left: 0;
+            }
+        }
+        
+        .sidebar .d-flex {
+            min-height: 100vh;
+        }
+        
+        .logout-link {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+        }
+        
+        .sidebar-link {
+            color: var(--text-light);
+            padding: 1rem;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            color: var(--text-dark);
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            border-radius: 0.5rem;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0.15rem 1.75rem rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--primary-color);
+        }
+        
+        .progress {
+            height: 1rem;
+            border-radius: 0.5rem;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .bg-custom-dark {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+        }
+
+        .bg-custom-yellow {
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+        }
+
+        .card-header {
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--text-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        .badge {
+            background-color: var(--primary-color) !important;
+            color: var(--text-dark) !important;
+        }
+
+        .timeline-icon {
+            background-color: var(--primary-color);
+            color: var(--text-dark);
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <button id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar p-0 active">
+                <div class="d-flex flex-column">
+                    <div class="text-center p-4">
+                        <img src="https://via.placeholder.com/80" alt="Logo" class="mb-3">
+                        <h5 class="text-white">Incubatee Portal</h5>
+                    </div>
+                    <a href="dashboard.html" class="sidebar-link active"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+                    <a href="projects.html" class="sidebar-link"><i class="fas fa-project-diagram me-2"></i> Projects</a>
+                    <a href="documents.html" class="sidebar-link"><i class="fas fa-file-alt me-2"></i> Documents</a>
+                    <a href="logout.html" class="sidebar-link logout-link" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 p-4 main-content sidebar-active">
+                <!-- Welcome Section -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4>Welcome back, John!</h4>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn btn-link text-dark dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge">3</span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">New mentor message</a></li>
+                                <li><a class="dropdown-item" href="#">Upcoming deadline</a></li>
+                                <li><a class="dropdown-item" href="#">Project review scheduled</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <div class="card bg-custom-dark">
+                            <div class="card-body">
+                                <h6>Projects</h6>
+                                <h2>3</h2>
+                                <div class="progress">
+                                    <div class="progress-bar bg-custom-yellow" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-custom-dark">
+                            <div class="card-body">
+                                <h6>Mentorship Hours</h6>
+                                <h2>24</h2>
+                                <div class="progress">
+                                    <div class="progress-bar bg-custom-yellow" style="width: 60%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-custom-dark">
+                            <div class="card-body">
+                                <h6>Milestones</h6>
+                                <h2>8/12</h2>
+                                <div class="progress">
+                                    <div class="progress-bar bg-custom-yellow" style="width: 66%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card bg-custom-dark">
+                            <div class="card-body">
+                                <h6>Funding Secured</h6>
+                                <h2>₹5L</h2>
+                                <div class="progress">
+                                    <div class="progress-bar bg-custom-yellow" style="width: 50%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Progress and Timeline -->
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <div class="card h-100">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0">Project Progress</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Smart IoT Solution</span>
+                                        <span>85%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-custom-yellow" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Market Research</span>
+                                        <span>70%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-custom-yellow" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Business Plan</span>
+                                        <span>60%</span>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-custom-yellow" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0">Upcoming Events</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-custom-yellow p-2 rounded me-3">
+                                        <i class="fas fa-calendar"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Mentor Meeting</h6>
+                                        <small class="text-muted">Tomorrow, 2:00 PM</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-custom-yellow p-2 rounded me-3">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Project Review</h6>
+                                        <small class="text-muted">March 10, 11:00 AM</small>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-custom-yellow p-2 rounded me-3">
+                                        <i class="fas fa-chalkboard"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-0">Pitch Practice</h6>
+                                        <small class="text-muted">March 15, 3:00 PM</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities and Profile -->
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0">Recent Activities</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="timeline">
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-shrink-0">
+                                            <div class="bg-custom-yellow p-2 rounded">
+                                                <i class="fas fa-file-alt"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Project Documentation Updated</h6>
+                                            <p class="text-muted mb-0">Added new market analysis section</p>
+                                            <small class="text-muted">2 hours ago</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-3">
+                                        <div class="flex-shrink-0">
+                                            <div class="bg-custom-yellow p-2 rounded">
+                                                <i class="fas fa-check"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Milestone Completed</h6>
+                                            <p class="text-muted mb-0">MVP Development Phase 1</p>
+                                            <small class="text-muted">Yesterday</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0">
+                                            <div class="bg-custom-yellow p-2 rounded">
+                                                <i class="fas fa-comments"></i>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1 ms-3">
+                                            <h6 class="mb-1">Mentor Feedback Received</h6>
+                                            <p class="text-muted mb-0">Review of business model canvas</p>
+                                            <small class="text-muted">2 days ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <img src="https://via.placeholder.com/150" alt="Profile" class="profile-img mb-3">
+                                <h5>John Doe</h5>
+                                <p class="text-muted">Tech Startup Founder</p>
+                                <div class="d-flex justify-content-around mb-3">
+                                    <div>
+                                        <h6>3</h6>
+                                        <small class="text-muted">Projects</small>
+                                    </div>
+                                    <div>
+                                        <h6>8</h6>
+                                        <small class="text-muted">Mentors</small>
+                                    </div>
+                                    <div>
+                                        <h6>12</h6>
+                                        <small class="text-muted">Milestones</small>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary w-100">Edit Profile</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+            document.querySelector('.main-content').classList.toggle('sidebar-active');
+        });
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+</html>

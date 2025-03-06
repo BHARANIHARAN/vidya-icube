@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incubatee Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffd700;
+            --secondary-color: #212529;
+            --accent-color: #ffc107;
+            --text-dark: #212529;
+            --text-light: #ffffff;
+        }
+        
+        .sidebar {
+            min-height: 100vh;
+            background: var(--secondary-color);
+            border-right: 3px solid var(--primary-color);
+            transition: all 0.3s;
+            margin-left: -100%;
+            position: fixed;
+            z-index: 1000;
+            width: 250px;
+        }
+        
+        .sidebar.active {
+            margin-left: 0;
+        }
+        
+        #sidebarToggle {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            z-index: 1001;
+            background: var(--primary-color);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .main-content {
+            margin-left: 0;
+            width: 100%;
+            padding: 20px;
+            padding-top: 80px;
+        }
+        
+        .main-content.sidebar-active {
+            padding-left: 270px;
+        }
+        
+        .sidebar .d-flex {
+            min-height: 100vh;
+        }
+        
+        .logout-link {
+            margin-top: auto;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+        }
+        
+        .sidebar-link {
+            color: var(--text-light);
+            padding: 1rem;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .sidebar-link:hover, .sidebar-link.active {
+            color: var(--text-dark);
+            background-color: var(--primary-color);
+        }
+        
+        .card {
+            border-radius: 0.5rem;
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0.15rem 1.75rem rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card {
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        .progress {
+            height: 0.8rem;
+            border-radius: 0.4rem;
+        }
+
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            color: var(--text-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-dark);
+        }
+
+        .milestone-item {
+            border-left: 3px solid var(--primary-color);
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .milestone-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--primary-color);
+        }
+
+        .task-list-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .task-list-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container-fluid">
+        <button id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar p-0 active">
+                <div class="d-flex flex-column">
+                    <div class="text-center p-4">
+                        <img src="https://via.placeholder.com/80" alt="Logo" class="mb-3">
+                        <h5 class="text-white">Incubatee Portal</h5>
+                    </div>
+                    <a href="dashboard.html" class="sidebar-link"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+                    <a href="projects.html" class="sidebar-link active"><i class="fas fa-project-diagram me-2"></i> Projects</a>
+                    <a href="documents.html" class="sidebar-link"><i class="fas fa-file-alt me-2"></i> Documents</a>
+                    <a href="logout.html" class="sidebar-link logout-link" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 p-4 main-content sidebar-active">
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h4>My Projects</h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProjectModal">
+                        <i class="fas fa-plus me-2"></i>Add New Project
+                    </button>
+                </div>
+
+                <!-- Project Cards -->
+                <div class="row mb-4">
+                    <!-- Smart IoT Solution -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <span class="badge bg-success status-badge">Active</span>
+                                <h5 class="card-title mb-3">Smart IoT Solution</h5>
+                                <p class="card-text text-muted">IoT-based smart home automation system with AI integration</p>
+                                <div class="mb-3">
+                                    <small class="text-muted">Progress</small>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="team-members">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="Team member">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="Team member">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="Team member">
+                                    </div>
+                                    <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#projectDetailsModal">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Market Research -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <span class="badge bg-warning status-badge">In Progress</span>
+                                <h5 class="card-title mb-3">Market Research</h5>
+                                <p class="card-text text-muted">Comprehensive market analysis and competitor research</p>
+                                <div class="mb-3">
+                                    <small class="text-muted">Progress</small>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 70%"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="team-members">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="Team member">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="Team member">
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Plan -->
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card project-card">
+                            <div class="card-body">
+                                <span class="badge bg-info status-badge">Planning</span>
+                                <h5 class="card-title mb-3">Business Plan</h5>
+                                <p class="card-text text-muted">Detailed business strategy and financial projections</p>
+                                <div class="mb-3">
+                                    <small class="text-muted">Progress</small>
+                                    <div class="progress">
+                                        <div class="progress-bar" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="team-members">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="Team member">
+                                        <img src="https://via.placeholder.com/30" class="rounded-circle" alt="Team member">
+                                    </div>
+                                    <button class="btn btn-primary btn-sm">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Details Modal -->
+                <div class="modal fade" id="projectDetailsModal" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header bg-custom-dark text-white">
+                                <h5 class="modal-title">Smart IoT Solution</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <!-- Project Overview -->
+                                    <div class="col-md-12 mb-4">
+                                        <h6 class="mb-3">Project Overview</h6>
+                                        <p>IoT-based smart home automation system with AI integration for intelligent control of home appliances and energy management.</p>
+                                        <div class="row mt-3">
+                                            <div class="col-md-3 mb-3">
+                                                <small class="text-muted d-block">Start Date</small>
+                                                <strong>Jan 15, 2025</strong>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <small class="text-muted d-block">End Date</small>
+                                                <strong>Jun 30, 2025</strong>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <small class="text-muted d-block">Status</small>
+                                                <span class="badge bg-success">Active</span>
+                                            </div>
+                                            <div class="col-md-3 mb-3">
+                                                <small class="text-muted d-block">Progress</small>
+                                                <strong>85%</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Team Members -->
+                                    <div class="col-md-6 mb-4">
+                                        <h6 class="mb-3">Team Members</h6>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="Team member">
+                                            <div>
+                                                <strong class="d-block">John Doe</strong>
+                                                <small class="text-muted">Project Lead</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center mb-2">
+                                            <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="Team member">
+                                            <div>
+                                                <strong class="d-block">Jane Smith</strong>
+                                                <small class="text-muted">IoT Developer</small>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="Team member">
+                                            <div>
+                                                <strong class="d-block">Mike Johnson</strong>
+                                                <small class="text-muted">AI Specialist</small>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Key Metrics -->
+                                    <div class="col-md-6 mb-4">
+                                        <h6 class="mb-3">Key Metrics</h6>
+                                        <div class="mb-3">
+                                            <small class="text-muted d-block mb-1">Tasks Completed</small>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 85%"></div>
+                                            </div>
+                                            <small class="text-muted">34/40 tasks</small>
+                                        </div>
+                                        <div class="mb-3">
+                                            <small class="text-muted d-block mb-1">Budget Utilized</small>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 70%"></div>
+                                            </div>
+                                            <small class="text-muted">₹3.5L/₹5L</small>
+                                        </div>
+                                        <div>
+                                            <small class="text-muted d-block mb-1">Timeline Progress</small>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 60%"></div>
+                                            </div>
+                                            <small class="text-muted">3/5 months</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- Milestones -->
+                                    <div class="col-md-12 mb-4">
+                                        <h6 class="mb-3">Milestones</h6>
+                                        <div class="milestone-item mb-3">
+                                            <h6 class="mb-1">Project Planning & Requirements</h6>
+                                            <small class="text-muted">Completed on Jan 30, 2025</small>
+                                        </div>
+                                        <div class="milestone-item mb-3">
+                                            <h6 class="mb-1">MVP Development</h6>
+                                            <small class="text-muted">Completed on Mar 15, 2025</small>
+                                        </div>
+                                        <div class="milestone-item">
+                                            <h6 class="mb-1">Testing & Deployment</h6>
+                                            <small class="text-muted">Due by Jun 30, 2025</small>
+                                        </div>
+                                    </div>
+
+                                    <!-- Task List -->
+                                    <div class="col-md-12">
+                                        <h6 class="mb-3">Current Tasks</h6>
+                                        <div class="task-list">
+                                            <div class="task-list-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h6 class="mb-1">Implement AI Algorithm</h6>
+                                                        <small class="text-muted">Due: Apr 15, 2025</small>
+                                                    </div>
+                                                    <span class="badge bg-warning">In Progress</span>
+                                                </div>
+                                            </div>
+                                            <div class="task-list-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h6 class="mb-1">User Interface Design</h6>
+                                                        <small class="text-muted">Due: Apr 30, 2025</small>
+                                                    </div>
+                                                    <span class="badge bg-info">Pending</span>
+                                                </div>
+                                            </div>
+                                            <div class="task-list-item">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <div>
+                                                        <h6 class="mb-1">Integration Testing</h6>
+                                                        <small class="text-muted">Due: May 15, 2025</small>
+                                                    </div>
+                                                    <span class="badge bg-info">Pending</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add Project Modal -->
+                <div class="modal fade" id="addProjectModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header bg-custom-dark text-white">
+                                <h5 class="modal-title">Add New Project</h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="addProjectForm">
+                                    <div class="mb-3">
+                                        <label class="form-label">Project Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Description</label>
+                                        <textarea class="form-control" rows="3" required></textarea>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Start Date</label>
+                                            <input type="date" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">End Date</label>
+                                            <input type="date" class="form-control" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Team Members</label>
+                                        <select class="form-select" multiple required>
+                                            <option>John Doe</option>
+                                            <option>Jane Smith</option>
+                                            <option>Mike Johnson</option>
+                                            <option>Sarah Williams</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Status</label>
+                                        <select class="form-select" required>
+                                            <option>Planning</option>
+                                            <option>Active</option>
+                                            <option>In Progress</option>
+                                            <option>On Hold</option>
+                                            <option>Completed</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" form="addProjectForm" class="btn btn-primary">Create Project</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.querySelector('.sidebar').classList.add('active');
+        document.querySelector('.main-content').classList.add('sidebar-active');
+
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+            document.querySelector('.main-content').classList.toggle('sidebar-active');
+        });
+
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                window.location.href = 'login.html';
+            }
+        }
+    </script>
+</body>
+</html>

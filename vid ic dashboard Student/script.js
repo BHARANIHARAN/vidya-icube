@@ -56,6 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectUploadForm = document.getElementById('projectUploadForm');
     projectUploadForm.addEventListener('submit', function(e) {
         e.preventDefault();
+    // Redirect to the next page (dashboard.html)
+    window.location.href = 'dashboard aft sub.html';
 
         // Gather team members data
         const teamMembers = [];

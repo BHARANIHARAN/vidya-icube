@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <!-- Role Selection -->
+            <div class="input-group">
+                <label for="role">Select Your Role</label>
+                <div class="role-input-container">
+                <input type="text" id="role" name="role" readonly placeholder="Click to select role">
+                </div>
+                <div id="role-list" class="role-list">
+                    <ul>
+                        <li onclick="selectRole('Admin')">Admin</li>
+                        <li onclick="selectRole('Incubatee')">Incubatee</li>
+                        <li onclick="selectRole('Faculty')">Faculty</li>
+                        <li onclick="selectRole('Student')">Student</li>
+                    </ul>
+                </div>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

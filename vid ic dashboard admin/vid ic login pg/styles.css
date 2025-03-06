@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Container */
+.login-container {
+    background-color: #fff; /* White container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(255, 223, 0, 0.5); /* Yellow shadow */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    color: #000; /* Black text */
+    font-size: 24px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative; /* Required for positioning the role list */
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #000; /* Black text */
+    font-weight: bold;
+}
+
+/* Role Input Container */
+.role-input-container {
+    position: relative;
+}
+
+.role-input-container::after {
+    content: "▼"; /* Down arrow */
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000; /* Black arrow */
+    pointer-events: none; /* Ensure the arrow doesn't interfere with clicking */
+}
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    border: 2px solid #ffD700; /* Yellow border */
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    cursor: pointer;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #000; /* Black border on focus */
+}
+
+/* Role List */
+.role-list {
+    display: none;
+    background-color: #fff; /* White background */
+    border: 2px solid #ffD700; /* Yellow border */
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(255, 223, 0, 0.5); /* Yellow shadow */
+    position: absolute;
+    width: 100%;
+    z-index: 1; /* Ensure the list appears above other elements */
+}
+
+.role-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.role-list li {
+    padding: 12px;
+    cursor: pointer;
+    color: #000; /* Black text */
+    transition: background-color 0.3s ease;
+}
+
+.role-list li:hover {
+    background-color: #ffD700; /* Yellow background on hover */
+    color: #000; /* Black text */
+}
+
+/* Login Button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffD700; /* Yellow background */
+    border: none;
+    border-radius: 6px;
+    color: #000; /* Black text */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #000; /* Black background on hover */
+    color: #ffD700; /* Yellow text */
+}
