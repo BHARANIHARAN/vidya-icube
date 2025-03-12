@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Vidya iCube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <img src="logo.gif" alt="KIT" class="logo1">
+            <img src="logo2.png" alt="Logo 2" class="logo2">
+            <div class="content">
+                <h1>Dr. Vidya Research, Innovation and Incubation Centre</h1>
+                <p class="tagline">Empowering Tomorrow's Innovators</p>
+            </div>
+            <div class="header-actions">
+                <div class="cta-buttons">
+                    <div class="dropdown">
+                        <button class="apply-btn" id="applyBtn">
+                            Apply Now
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="applyDropdown">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item" data-type="student">
+                                    <div class="item-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - SISF</h4>
+                                        <p>Seed Fund for Innovative Student Projects</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item" data-type="faculty">
+                                    <div class="item-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - FISF</h4>
+                                        <p>Seed Fund for Faculty Research and Development</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-trigger"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#about-section"><i class="fas fa-eye"></i> Overview</a>
+                        <a href="index.html#history"><i class="fas fa-history"></i> History & Achievements</a>
+                        <a href="index.html#vision"><i class="fas fa-bullseye"></i> Vision & Mission</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-trigger"><i class="fas fa-chart-line"></i> Schemes/Programmes <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-coins"></i> Funding <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <a href="#" class="funding-item"><i class="fas fa-user-graduate"></i> Seed Fund for Innovative Student Projects</a>
+                                <a href="#" class="funding-item"><i class="fas fa-chalkboard-teacher"></i> Seed Fund for Faculty Research and Development</a>
+                            </div>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-trophy"></i> Competition <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <div class="coming-soon">
+                                    <i class="fas fa-clock pulse"></i>
+                                    <span>Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="facilities.html"><i class="fas fa-building"></i> Facilities</a></li>
+                <li><a href="portfolio.html" class="active"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Events/Gallery</a></li>
+                <li><a href="career.html"><i class="fas fa-user-tie"></i> Career</a></li>
+                <li><a href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="portfolio-content">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+        
+        <section class="banner">
+            <div id="particles-js"></div>
+            <div class="banner-content">
+                <div class="animated-text">
+                    <h1 class="glitch" data-text="Startups"><a href="#startups" class="startup-link">Startups</a></h1>
+                    <div class="institute-name">
+                        <span class="text-animate">KIT - Kalaignarkarunanidhi</span>
+                        <span class="text-animate">Institute Of Technology</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="startups" class="startup-showcase">
+            <div class="section-title">
+                <h2>Our Startups</h2>
+                <p>Innovative ventures born at KIT</p>
+            </div>
+            
+            <div class="startup-grid">
+                <!-- Startup Card 1 -->
+                <div class="startup-card" data-url="https://karuviyaninnovatives.com/">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="startup-logo">
+                                <img src="FINAL LOGO 1 (1).png" alt="Startup 1">
+                            </div>
+                            <h3>Karuviyan Innovations</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>Karuviyan Innovations</h3>
+                            <p>Pioneering AI solutions for computer vision and image processing. Specializing in real-time object detection and facial recognition systems.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Startup Card 2 -->
+                <div class="startup-card" data-url="https://www.mediaalchamy.com">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="startup-logo">
+                                <img src="startup2-logo.png" alt="Startup 2">
+                            </div>
+                            <h3>MediaAlchamy</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>MediaAlchamy</h3>
+                            <p>Developing sustainable energy solutions using innovative solar technology and smart grid systems for efficient power distribution.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Startup Card 3 -->
+                <div class="startup-card" data-url="https://www.healthtechinnovations.com">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="startup-logo">
+                                <img src="startup3-logo.png" alt="Startup 3">
+                            </div>
+                            <h3>HealthTech Innovations</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>HealthTech Innovations</h3>
+                            <p>Creating cutting-edge medical devices and healthcare management systems to improve patient care and hospital efficiency.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Startup Card 4 -->
+                <div class="startup-card" data-url="https://www.agrosmart.com">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="startup-logo">
+                                <img src="startup4-logo.png" alt="Startup 4">
+                            </div>
+                            <h3>AgroSmart</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>AgroSmart</h3>
+                            <p>Revolutionizing agriculture with IoT-based smart farming solutions and precision agriculture technology for improved crop yields.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Startup Card 5 -->
+                <div class="startup-card" data-url="https://www.edutechplus.com">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="startup-logo">
+                                <img src="startup5-logo.png" alt="Startup 5">
+                            </div>
+                            <h3>EduTech Plus</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>EduTech Plus</h3>
+                            <p>Transforming education through adaptive learning platforms and AI-powered personalized tutoring systems for enhanced student engagement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Startup Card 6 -->
+                <div class="startup-card" data-url="https://www.roboinnovate.com">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="startup-logo">
+                                <img src="startup6-logo.png" alt="Startup 6">
+                            </div>
+                            <h3>RoboInnovate</h3>
+                        </div>
+                        <div class="card-back">
+                            <h3>RoboInnovate</h3>
+                            <p>Developing next-generation robotics solutions for industrial automation and smart manufacturing processes with advanced AI integration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio content will go here -->
+    </main>
+
+    <!-- Apply Modal -->
+    <div id="applyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="portfolio.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

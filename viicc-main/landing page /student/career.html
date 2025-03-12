@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Opportunities - Vidya iCube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="career.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <img src="logo.gif" alt="KIT" class="logo1">
+            <img src="logo2.png" alt="Logo 2" class="logo2">
+            <div class="content">
+                <h1>Dr. Vidya Research, Innovation and Incubation Centre</h1>
+                <p class="tagline">Empowering Tomorrow's Innovators</p>
+            </div>
+            <div class="header-actions">
+                <div class="cta-buttons">
+                    <div class="dropdown">
+                        <button class="apply-btn" id="applyBtn">
+                            Apply Now
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="applyDropdown">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item" data-type="student">
+                                    <div class="item-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - SISF</h4>
+                                        <p>Seed Fund for Innovative Student Projects</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item" data-type="faculty">
+                                    <div class="item-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - FISF</h4>
+                                        <p>Seed Fund for Faculty Research and Development</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html" ><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-trigger"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#about-section"><i class="fas fa-eye"></i> Overview</a>
+                        <a href="index.html#history"><i class="fas fa-history"></i> History & Achievements</a>
+                        <a href="index.html#vision"><i class="fas fa-bullseye"></i> Vision & Mission</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-trigger"><i class="fas fa-chart-line"></i> Schemes/Programmes <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-coins"></i> Funding <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <a href="#" class="funding-item"><i class="fas fa-user-graduate"></i> Seed Fund for Innovative Student Projects</a>
+                                <a href="#" class="funding-item"><i class="fas fa-chalkboard-teacher"></i> Seed Fund for Faculty Research and Development</a>
+                            </div>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-trophy"></i> Competition <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <div class="coming-soon">
+                                    <i class="fas fa-clock pulse"></i>
+                                    <span>Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="facilities.html"><i class="fas fa-building"></i> Facilities</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Events/Gallery</a></li>
+                <li><a href="career.html" class="active"><i class="fas fa-user-tie"></i> Career</a></li>
+                <li><a href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1>Join Our Innovation Journey</h1>
+                <p>Be part of a team that's shaping the future of technology and innovation</p>
+            </div>
+        </section>
+
+        <section class="career-filters">
+            <div class="search-box">
+                <input type="text" id="job-search" placeholder="Search for positions...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i>
+                    All Positions
+                </button>
+                <button class="filter-btn" data-filter="research">
+                    <i class="fas fa-microscope"></i>
+                    Research
+                </button>
+                <button class="filter-btn" data-filter="engineering">
+                    <i class="fas fa-cogs"></i>
+                    Engineering
+                </button>
+                <button class="filter-btn" data-filter="management">
+                    <i class="fas fa-tasks"></i>
+                    Management
+                </button>
+            </div>
+        </section>
+
+        <section class="career-section">
+            <div class="career-grid">
+                <div class="career-card">
+                    <div class="card-side">
+                        <h3>Senior Research Scientist</h3>
+                        <div class="career-tags">
+                            <span class="career-tag">Research</span>
+                            <span class="career-tag">AI/ML</span>
+                            <span class="career-tag">Innovation</span>
+                        </div>
+                    </div>
+                    <div class="card-main">
+                        <div class="career-info">
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Full Time</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Chennai</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>PhD with 5+ years</span>
+                            </div>
+                        </div>
+                        <p class="career-description">
+                            Lead groundbreaking research initiatives in AI/ML, collaborate with industry partners, 
+                            and mentor junior researchers. Drive innovation in emerging technologies and contribute 
+                            to high-impact publications.
+                        </p>
+                        <button class="apply-butn">Apply Now <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="career-card">
+                    <div class="card-side">
+                        <h3>Innovation Engineer</h3>
+                        <div class="career-tags">
+                            <span class="career-tag">Engineering</span>
+                            <span class="career-tag">Development</span>
+                            <span class="career-tag">IoT</span>
+                        </div>
+                    </div>
+                    <div class="card-main">
+                        <div class="career-info">
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Full Time</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Chennai</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>3+ years</span>
+                            </div>
+                        </div>
+                        <p class="career-description">
+                            Design and develop innovative IoT solutions, work with cutting-edge hardware, 
+                            and create proof-of-concept prototypes. Collaborate with research teams to 
+                            bring ideas to life.
+                        </p>
+                        <button class="apply-butn">Apply Now <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+                <div class="career-card">
+                    <div class="card-side">
+                        <h3>Project Manager</h3>
+                        <div class="career-tags">
+                            <span class="career-tag">Management</span>
+                            <span class="career-tag">Leadership</span>
+                            <span class="career-tag">Strategy</span>
+                        </div>
+                    </div>
+                    <div class="card-main">
+                        <div class="career-info">
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Full Time</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Chennai</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>5+ years</span>
+                            </div>
+                        </div>
+                        <p class="career-description">
+                            Lead and manage innovative research projects, coordinate with stakeholders, 
+                            and ensure successful delivery of outcomes. Drive strategic initiatives and 
+                            mentor project teams.
+                        </p>
+                        <button class="apply-butn">Apply Now <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Why Join Us?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Innovation First</h3>
+                    <p>Work on cutting-edge technologies and shape the future</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Great Team</h3>
+                    <p>Collaborate with talented and passionate innovators</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Growth</h3>
+                    <p>Continuous learning and career advancement opportunities</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Recognition</h3>
+                    <p>Your achievements and contributions are valued</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="javascript.js"></script>
+    <script src="career.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Gallery - Vidya iCube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="gallery.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <img src="logo.gif" alt="KIT" class="logo1">
+            <img src="logo2.png" alt="Logo 2" class="logo2">
+            <div class="content">
+                <h1>Dr. Vidya Research, Innovation and Incubation Centre</h1>
+                <p class="tagline">Empowering Tomorrow's Innovators</p>
+            </div>
+            <div class="header-actions">
+                <div class="cta-buttons">
+                    <div class="dropdown">
+                        <button class="apply-btn" id="applyBtn">
+                            Apply Now
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="applyDropdown">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item" data-type="student">
+                                    <div class="item-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - SISF</h4>
+                                        <p>Seed Fund for Innovative Student Projects</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item" data-type="faculty">
+                                    <div class="item-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - FISF</h4>
+                                        <p>Seed Fund for Faculty Research and Development</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-trigger"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#about-section"><i class="fas fa-eye"></i> Overview</a>
+                        <a href="index.html#history"><i class="fas fa-history"></i> History & Achievements</a>
+                        <a href="index.html#vision"><i class="fas fa-bullseye"></i> Vision & Mission</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-trigger"><i class="fas fa-chart-line"></i> Schemes/Programmes <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-coins"></i> Funding <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <a href="#" class="funding-item"><i class="fas fa-user-graduate"></i> Seed Fund for Innovative Student Projects</a>
+                                <a href="#" class="funding-item"><i class="fas fa-chalkboard-teacher"></i> Seed Fund for Faculty Research and Development</a>
+                            </div>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-trophy"></i> Competition <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <div class="coming-soon">
+                                    <i class="fas fa-clock pulse"></i>
+                                    <span>Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="facilities.html"><i class="fas fa-building"></i> Facilities</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="gallery.html" class="active"><i class="fas fa-images"></i> Events/Gallery</a></li>
+                <li><a href="career.html"><i class="fas fa-user-tie"></i> Career</a></li>
+                <li><a href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <h1>Events & Gallery</h1>
+            <p class="gallery-subtitle">Explore our events, workshops, and achievements</p>
+
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-border-all"></i> All
+                </button>
+                <button class="filter-btn" data-filter="events">
+                    <i class="fas fa-calendar-alt"></i> Events
+                </button>
+                <button class="filter-btn" data-filter="workshops">
+                    <i class="fas fa-chalkboard-teacher"></i> Workshops
+                </button>
+                <button class="filter-btn" data-filter="awards">
+                    <i class="fas fa-trophy"></i> Awards
+                </button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Events -->
+                <div class="gallery-item events" data-category="events">
+                    <div class="gallery-image">
+                        <img src="event1.jpg" alt="Innovation Summit 2024">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Innovation Summit 2024</h3>
+                                <p>Annual gathering of innovators and entrepreneurs</p>
+                                <span class="date"><i class="fas fa-calendar"></i> March 15, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workshops -->
+                <div class="gallery-item workshops" data-category="workshops">
+                    <div class="gallery-image">
+                        <img src="workshop1.jpg" alt="AI Workshop">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>AI & Machine Learning Workshop</h3>
+                                <p>Hands-on training in AI technologies</p>
+                                <span class="date"><i class="fas fa-calendar"></i> February 20, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Awards -->
+                <div class="gallery-item awards" data-category="awards">
+                    <div class="gallery-image">
+                        <img src="award1.jpg" alt="Best Innovation Award">
+                        <div class="overlay">
+                            <div class="overlay-content">
+                                <h3>Best Innovation Award</h3>
+                                <p>Recognition for outstanding student projects</p>
+                                <span class="date"><i class="fas fa-calendar"></i> January 30, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add more gallery items here -->
+            </div>
+
+            <div class="load-more">
+                <button id="loadMoreBtn" class="load-more-btn">
+                    <span>Load More</span>
+                    <i class="fas fa-spinner fa-spin"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- Lightbox -->
+        <div class="lightbox" id="lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-caption"></div>
+            <button class="lightbox-nav prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="lightbox-nav next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </main>
+
+    <script src="javascript.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vidya iCube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logos">
+            <img src="logo.gif" alt="KIT" class="logo1">
+            <img src="logo2.png" alt="Logo 2" class="logo2">
+            <div class="content">
+                <h1>Dr. Vidya Research, Innovation and Incubation Centre</h1>
+                <p class="tagline">Empowering Tomorrow's Innovators</p>
+            </div>
+            <div class="header-actions">
+                <div class="cta-buttons">
+                    <div class="dropdown">
+                        <button class="apply-btn" id="applyBtn">
+                            Apply Now
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="applyDropdown">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item" data-type="student">
+                                    <div class="item-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - SISF</h4>
+                                        <p>Seed Fund for Innovative Student Projects</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item" data-type="faculty">
+                                    <div class="item-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - FISF</h4>
+                                        <p>Seed Fund for Faculty Research and Development</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-trigger"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#about-section"><i class="fas fa-eye"></i> Overview</a>
+                        <a href="index.html#history"><i class="fas fa-history"></i> History & Achievements</a>
+                        <a href="index.html#vision"><i class="fas fa-bullseye"></i> Vision & Mission</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-trigger"><i class="fas fa-chart-line"></i> Schemes/Programmes <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-coins"></i> Funding <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <a href="#" class="funding-item"><i class="fas fa-user-graduate"></i> Seed Fund for Innovative Student Projects</a>
+                                <a href="#" class="funding-item"><i class="fas fa-chalkboard-teacher"></i> Seed Fund for Faculty Research and Development</a>
+                            </div>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-trophy"></i> Competition <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <div class="coming-soon">
+                                    <i class="fas fa-clock pulse"></i>
+                                    <span>Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="facilities.html"><i class="fas fa-building"></i> Facilities</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Events/Gallery</a></li>
+                <li><a href="career.html"><i class="fas fa-user-tie"></i> Career</a></li>
+                <li><a href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h1>Get in Touch</h1>
+            <p class="contact-subtitle">Have questions? We'd love to hear from you.</p>
+            
+            <form id="contact-form" class="animated-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="firstName" name="firstName" required>
+                        <label for="firstName">First Name</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="lastName" name="lastName" required>
+                        <label for="lastName">Last Name</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email Address</label>
+                        <span class="focus-border"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" required>
+                        <label for="phone">Phone Number</label>
+                        <span class="focus-border"></span>
+                    </div>
+                </div>
+
+                <div class="form-group select-group">
+                    <select id="userType" name="userType" required>
+                        <option value="" disabled selected>Select your role</option>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                    <span class="focus-border"></span>
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Your Message</label>
+                    <span class="focus-border"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span class="button-text">Send Message</span>
+                    <span class="button-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </span>
+                </button>
+            </form>
+        </section>
+    </main>
+    <script src="javascript.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
