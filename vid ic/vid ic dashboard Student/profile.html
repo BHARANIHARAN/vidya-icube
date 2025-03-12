@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - IC Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="active">
+            <div class="sidebar-header">
+                <h3>IC Dashboard</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                <li>
+                    <a href="tasks.html"><i class="fas fa-tasks"></i> Tasks</a>
+                </li>
+                
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Top Navigation -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="ms-auto d-flex align-items-center">
+                        <div class="dropdown">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="notificationDropdown" data-bs-toggle="dropdown">
+                                <i class="fas fa-bell"></i>
+                                <span class="badge bg-danger">3</span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#">New project assigned</a></li>
+                                <li><a class="dropdown-item" href="#">Team meeting in 1 hour</a></li>
+                                <li><a class="dropdown-item" href="#">Task deadline approaching</a></li>
+                            </ul>
+                        </div>
+                        <div class="dropdown ms-3">
+                            <button class="btn btn-link dropdown-toggle d-flex align-items-center" type="button" id="profileDropdown" data-bs-toggle="dropdown">
+                                <img src="https://via.placeholder.com/32" class="rounded-circle me-2" alt="Profile">
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+                                <li><a class="dropdown-item" href="settings.html">Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="logout.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid py-4">
+                <div class="row">
+                    <!-- Profile Information -->
+                    <div class="col-lg-4">
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Profile Information</h5>
+                            </div>
+                            <div class="card-body text-center">
+                                <img src="https://via.placeholder.com/150" class="rounded-circle img-thumbnail mb-3" alt="Profile Picture">
+                                <h4>John Doe</h4>
+                                <p class="text-muted">Senior Project Manager</p>
+                                <div class="d-flex justify-content-center mb-3">
+                                    <button class="btn btn-primary me-2"><i class="fas fa-edit"></i> Edit Profile</button>
+                                    <button class="btn btn-outline-secondary"><i class="fas fa-camera"></i> Change Photo</button>
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <a href="#" class="btn btn-sm btn-outline-primary mx-1"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary mx-1"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="btn btn-sm btn-outline-primary mx-1"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Contact Information</h5>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fas fa-envelope text-primary me-2"></i> Email
+                                        </div>
+                                        <span>john.doe@example.com</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fas fa-phone text-primary me-2"></i> Phone
+                                        </div>
+                                        <span>+1 (555) 123-4567</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fas fa-map-marker-alt text-primary me-2"></i> Location
+                                        </div>
+                                        <span>San Francisco, CA</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <i class="fas fa-building text-primary me-2"></i> Department
+                                        </div>
+                                        <span>Project Management</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Details -->
+                    <div class="col-lg-8">
+                        <!-- About -->
+                        <div class="card mb-4">
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h5 class="card-title mb-0">About</h5>
+                                <button class="btn btn-sm btn-outline-primary"><i class="fas fa-edit"></i></button>
+                            </div>
+                            <div class="card-body">
+                                <p>Experienced project manager with over 8 years of experience in leading cross-functional teams and delivering complex projects on time and within budget. Specialized in agile methodologies and digital transformation initiatives.</p>
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary">Skills</h6>
+                                        <div class="mb-3">
+                                            <span class="badge bg-primary me-1">Project Management</span>
+                                            <span class="badge bg-primary me-1">Agile</span>
+                                            <span class="badge bg-primary me-1">Scrum</span>
+                                            <span class="badge bg-primary me-1">Team Leadership</span>
+                                            <span class="badge bg-primary me-1">Budget Planning</span>
+                                            <span class="badge bg-primary me-1">Risk Management</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary">Languages</h6>
+                                        <div class="mb-2">
+                                            <span>English</span>
+                                            <div class="progress" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 100%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span>Spanish</span>
+                                            <div class="progress" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <span>French</span>
+                                            <div class="progress" style="height: 5px;">
+                                                <div class="progress-bar" role="progressbar" style="width: 45%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Current Projects -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Current Projects</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Project</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
+                                                <th>Progress</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>AI Innovation Hub</td>
+                                                <td>Project Lead</td>
+                                                <td><span class="badge bg-success">On Track</span></td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 75%"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Smart City Solution</td>
+                                                <td>Technical Advisor</td>
+                                                <td><span class="badge bg-warning">In Progress</span></td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 45%"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Digital Transformation</td>
+                                                <td>Consultant</td>
+                                                <td><span class="badge bg-info">Planning</span></td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 15%"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Recent Activity -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title mb-0">Recent Activity</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="timeline">
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-primary">
+                                            <i class="fas fa-comment-alt"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <h6 class="mb-0">Commented on project proposal</h6>
+                                            <small class="text-muted">Today, 10:30 AM</small>
+                                            <p class="mt-2">Added feedback on the AI Innovation Hub project proposal.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-success">
+                                            <i class="fas fa-check-circle"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <h6 class="mb-0">Completed milestone</h6>
+                                            <small class="text-muted">Yesterday, 3:45 PM</small>
+                                            <p class="mt-2">Successfully completed Phase 1 of the Smart City Solution project.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-info">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <h6 class="mb-0">Team meeting</h6>
+                                            <small class="text-muted">March 5, 2025, 2:00 PM</small>
+                                            <p class="mt-2">Conducted weekly team meeting to discuss project progress and roadblocks.</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-marker bg-warning">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <h6 class="mb-0">Updated documentation</h6>
+                                            <small class="text-muted">March 4, 2025, 11:15 AM</small>
+                                            <p class="mt-2">Updated project documentation with new requirements and specifications.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle sidebar
+            document.getElementById('sidebarCollapse').addEventListener('click', function() {
+                document.getElementById('sidebar').classList.toggle('active');
+            });
+            
+            // Initialize tooltips
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+        });
+    </script>
+    <style>
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 25px;
+        }
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        .timeline-marker {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: -30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 30px;
+            bottom: 0;
+            width: 2px;
+            background-color: #e9ecef;
+        }
+    </style>
+</body>
+</html>
