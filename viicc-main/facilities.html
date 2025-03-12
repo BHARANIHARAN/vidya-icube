@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities - Vidya iCube</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="facilities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="facilities.js" defer></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <div class="custom-cursor"></div>
+    <div class="cursor-dot"></div>
+    
+    <header>
+        <div class="logos">
+            <div class="logo-container">
+                <img src="logo.gif" alt="KIT" class="logo1">
+                <img src="logo2.png" alt="Logo 2" class="logo2">
+            </div>
+            <div class="content">
+                <h1>Dr. Vidya Research, Innovation and Incubation Centre</h1>
+                <p class="tagline">Empowering Tomorrow's Innovators</p>
+            </div>
+            <div class="header-actions">
+                <div class="cta-buttons">
+                    <div class="dropdown">
+                        <button class="apply-btn" id="applyBtn">
+                            Apply Now
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="dropdown-menu" id="applyDropdown">
+                            <div class="dropdown-content">
+                                <a href="#" class="dropdown-item" data-type="faculty">
+                                    <div class="item-icon">
+                                        <i class="fas fa-industry"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - INCUBATION</h4>
+                                        <p>Seed Fund for Innovative Projects,Research and Development</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item" data-type="student">
+                                    <div class="item-icon">
+                                        <i class="fas fa-user-graduate"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - SISF</h4>
+                                        <p>Seed Fund for Innovative Student Projects</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                                <a href="#" class="dropdown-item" data-type="faculty">
+                                    <div class="item-icon">
+                                        <i class="fas fa-chalkboard-teacher"></i>
+                                    </div>
+                                    <div class="item-content">
+                                        <h4>KIT - FISF</h4>
+                                        <p>Seed Fund for Faculty Research and Development</p>
+                                    </div>
+                                    <div class="item-arrow">
+                                        <i class="fas fa-arrow-right"></i>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="mobile-nav">
+                <div class="menu-toggle">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="index.html" class="dropdown-trigger"><i class="fas fa-info-circle"></i> About <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#about-section"><i class="fas fa-eye"></i> Overview</a>
+                        <a href="index.html#vision"><i class="fas fa-bullseye"></i> Vision & Mission</a>
+                        <a href="index.html#history"><i class="fas fa-history"></i> History & Achievements</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-trigger"><i class="fas fa-chart-line"></i> Schemes/Programmes <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-industry"></i> Incubation <i class="fas fa-chevron-right"></i></a>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-coins"></i> Funding <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <a href="#" class="funding-item"><i class="fas fa-user-graduate"></i> Seed Fund for Innovative Student Projects</a>
+                                <a href="#" class="funding-item"><i class="fas fa-chalkboard-teacher"></i> Seed Fund for Faculty Research and Development</a>
+                            </div>
+                        </div>
+                        <div class="nested-dropdown">
+                            <a href="#" class="nested-trigger"><i class="fas fa-trophy"></i> Competition <i class="fas fa-chevron-right"></i></a>
+                            <div class="nested-content">
+                                <div class="coming-soon">
+                                    <i class="fas fa-clock pulse"></i>
+                                    <span>Coming Soon</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="facilities.html" class="active"><i class="fas fa-building"></i> Facilities</a></li>
+                <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Events/Gallery</a></li>
+                <li><a href="career.html"><i class="fas fa-user-tie"></i> Career</a></li>
+                <li><a href="faqs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="facilities-banner">
+            <div class="particles"></div>
+            <div class="banner-overlay"></div>
+            <div class="banner-content">
+                <h1 class="glowing-text">LAB FACILITIES</h1>
+                <p class="banner-subtitle">State-of-the-art Research & Development Infrastructure</p>
+                <button class="book-now-btn">
+                    <span>BOOK NOW</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+
+        <nav class="facilities-nav">
+            <div class="facilities-nav-container">
+                <a href="#clean-room" class="facility-nav-item" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-microscope"></i>
+                    <span>Clean Room Lab</span>
+                </a>
+                <a href="#pcb-lab" class="facility-nav-item" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-microchip"></i>
+                    <span>PCB Design & Fabrication</span>
+                </a>
+                <a href="#testing-lab" class="facility-nav-item" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-vial"></i>
+                    <span>Testing & Calibration</span>
+                </a>
+                <a href="#mechanical-lab" class="facility-nav-item" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-cube"></i>
+                    <span>3D Printing & Mechanical</span>
+                </a>
+                <a href="#esdm-lab" class="facility-nav-item" data-aos="fade-up" data-aos-delay="500">
+                    <i class="fas fa-microchip"></i>
+                    <span>ESDM Lab</span>
+                </a>
+                <a href="#design-lab" class="facility-nav-item" data-aos="fade-up" data-aos-delay="600">
+                    <i class="fas fa-drafting-compass"></i>
+                    <span>Design & Simulation</span>
+                </a>
+            </div>
+        </nav>
+
+        <section id="clean-room" class="lab-section">
+            <div class="lab-content">
+                <div class="lab-info" data-aos="fade-right">
+                    <h2 class="lab-title">
+                        <span>C</span>
+                        <span>l</span>
+                        <span>e</span>
+                        <span>a</span>
+                        <span>n</span>
+                        <span>&nbsp;</span>
+                        <span>R</span>
+                        <span>o</span>
+                        <span>o</span>
+                        <span>m</span>
+                        <span>&nbsp;</span>
+                        <span>L</span>
+                        <span>a</span>
+                        <span>b</span>
+                    </h2>
+                    <div class="equipment-table-container">
+                        <div class="table-header">
+                            <h3>EQUIPMENT LIST</h3>
+                            <div class="search-box">
+                                <input type="text" placeholder="Search equipment...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="equipment-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>S.NO.</th>
+                                        <th>NAME OF EQUIPMENT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Deionised Water System</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Mask Aligner and Exposure System</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Multipurpose Vacuum Furnace</td>
+                                        <td><span class="status-badge in-use">In Use</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Optical Parameter & thickness measurement software</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>Probe Station with Measuring Unit</td>
+                                        <td><span class="status-badge maintenance">Maintenance</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>RF/DC Sputtering Unit</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>Single Channel Source Meter</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>Spin Coater</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>Thermal cum Electron Beam Evaporation Unit</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>Upright Microscope</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="book-lab-btn">
+                        <span>BOOK NOW</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="lab-images" data-aos="fade-left">
+                    <div class="image-grid">
+                        <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?w=800" alt="Clean Room Equipment" class="lab-image main-image">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="Clean Room Facility" class="lab-image secondary-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pcb-lab" class="lab-section">
+            <div class="lab-content">
+                <div class="lab-images" data-aos="fade-right">
+                    <div class="image-grid">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="PCB Design Workstation" class="lab-image">
+                        <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?w=800" alt="PCB Manufacturing" class="lab-image">
+                        <img src="https://images.unsplash.com/photo-1581093458836-8d4e3b1c7a2f?w=800" alt="PCB Testing" class="lab-image">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="PCB Quality Control" class="lab-image">
+                    </div>
+                </div>
+                <div class="lab-info" data-aos="fade-left">
+                    <h2 class="lab-title">
+                        <span>P</span>
+                        <span>C</span>
+                        <span>B</span>
+                        <span>&nbsp;</span>
+                        <span>D</span>
+                        <span>e</span>
+                        <span>s</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>&nbsp;</span><br>
+                        <span>&</span>
+                        <span>&nbsp;</span>
+                        <span>F</span>
+                        <span>a</span>
+                        <span>b</span>
+                        <span>r</span>
+                        <span>i</span>
+                        <span>c</span>
+                        <span>a</span>
+                        <span>t</span>
+                        <span>i</span>
+                        <span>o</span>
+                        <span>n</span>
+                    </h2>
+                    <div class="equipment-table-container">
+                        <div class="table-header">
+                            <h3>EQUIPMENT LIST</h3>
+                            <div class="search-box">
+                                <input type="text" placeholder="Search equipment...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="equipment-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>S.NO.</th>
+                                        <th>NAME OF EQUIPMENT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>PCB Design Workstation</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>PCB Printer</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Soldering Station</td>
+                                        <td><span class="status-badge in-use">In Use</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Component Storage</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="book-lab-btn">
+                        <span>BOOK NOW</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="testing-lab" class="lab-section">
+            <div class="lab-content">
+                <div class="lab-info" data-aos="fade-right">
+                    <h2 class="lab-title">
+                        <span>T</span>
+                        <span>e</span>
+                        <span>s</span>
+                        <span>t</span>
+                        <span>i</span>
+                        <span>n</span>
+                        <span>g</span>
+                        <span>&nbsp;</span>
+                        <span>&</span>
+                        <span>&nbsp;</span><br>
+                        <span>C</span>
+                        <span>a</span>
+                        <span>l</span>
+                        <span>i</span>
+                        <span>b</span>
+                        <span>r</span>
+                        <span>a</span>
+                        <span>t</span>
+                        <span>i</span>
+                        <span>o</span>
+                        <span>n</span>
+                    </h2>
+                    <div class="equipment-table-container">
+                        <div class="table-header">
+                            <h3>EQUIPMENT LIST</h3>
+                            <div class="search-box">
+                                <input type="text" placeholder="Search equipment...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="equipment-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>S.NO.</th>
+                                        <th>NAME OF EQUIPMENT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Digital Oscilloscope</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Signal Generator</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Spectrum Analyzer</td>
+                                        <td><span class="status-badge in-use">In Use</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Network Analyzer</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="book-lab-btn">
+                        <span>BOOK NOW</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="lab-images" data-aos="fade-left">
+                    <div class="image-grid">
+                        <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?w=800" alt="Testing Equipment" class="lab-image main-image">
+                        <img src="https://images.unsplash.com/photo-1581093806997-124204d9fa9d?w=800" alt="Calibration Setup" class="lab-image secondary-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="mechanical-lab" class="lab-section">
+            <div class="lab-content">
+                <div class="lab-images" data-aos="fade-right">
+                    <div class="image-grid">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" alt="3D Printer" class="lab-image main-image">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800" alt="CNC Machine" class="lab-image secondary-image">
+                    </div>
+                </div>
+                <div class="lab-info" data-aos="fade-left">
+                    <h2 class="lab-title">
+                        <span>3</span>
+                        <span>D</span>
+                        <span>&nbsp;</span>
+                        <span>P</span>
+                        <span>r</span>
+                        <span>i</span>
+                        <span>n</span>
+                        <span>t</span>
+                        <span>i</span>
+                        <span>n</span>
+                        <span>g</span>
+                        <span>&nbsp;</span><br>
+                        <span>&</span>
+                        <span>&nbsp;</span>
+                        <span>M</span>
+                        <span>e</span>
+                        <span>c</span>
+                        <span>h</span>
+                        <span>a</span>
+                        <span>n</span>
+                        <span>i</span>
+                        <span>c</span>
+                        <span>a</span>
+                        <span>l</span>
+                    </h2>
+                    <div class="equipment-table-container">
+                        <div class="table-header">
+                            <h3>EQUIPMENT LIST</h3>
+                            <div class="search-box">
+                                <input type="text" placeholder="Search equipment...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="equipment-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>S.NO.</th>
+                                        <th>NAME OF EQUIPMENT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Ultimaker 3D Printer</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>CNC Machine</td>
+                                        <td><span class="status-badge in-use">In Use</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Laser Cutter</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>Milling Machine</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="book-lab-btn">
+                        <span>BOOK NOW</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="esdm-lab" class="lab-section">
+            <div class="lab-content">
+                <div class="lab-info" data-aos="fade-right">
+                    <h2 class="lab-title">
+                        <span>E</span>
+                        <span>S</span>
+                        <span>D</span>
+                        <span>M</span>
+                        <span>&nbsp;</span>
+                        <span>L</span>
+                        <span>a</span>
+                        <span>b</span>
+                        <span>o</span>
+                        <span>r</span>
+                        <span>a</span>
+                        <span>t</span>
+                        <span>o</span>
+                        <span>r</span>
+                        <span>y</span>
+                    </h2>
+                    <div class="equipment-table-container">
+                        <div class="table-header">
+                            <h3>EQUIPMENT LIST</h3>
+                            <div class="search-box">
+                                <input type="text" placeholder="Search equipment...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="equipment-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>S.NO.</th>
+                                        <th>NAME OF EQUIPMENT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>SMT Pick and Place Machine</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Reflow Oven</td>
+                                        <td><span class="status-badge in-use">In Use</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Wave Soldering Machine</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>BGA Rework Station</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="book-lab-btn">
+                        <span>BOOK NOW</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="lab-images" data-aos="fade-left">
+                    <div class="image-grid">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" alt="SMT Assembly" class="lab-image main-image">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" alt="ESDM Equipment" class="lab-image secondary-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="design-lab" class="lab-section">
+            <div class="lab-content">
+                <div class="lab-images" data-aos="fade-right">
+                    <div class="image-grid">
+                        <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800" alt="3D Printer" class="lab-image main-image">
+                        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800" alt="CNC Machine" class="lab-image secondary-image">
+                    </div>
+                </div>
+                <div class="lab-info" data-aos="fade-left">
+                    <h2 class="lab-title">
+                        <span>D</span>
+                        <span>e</span>
+                        <span>s</span>
+                        <span>i</span>
+                        <span>g</span>
+                        <span>n</span>
+                        <span>&nbsp;</span><br>
+                        <span>&</span>
+                        <span>&nbsp;</span>
+                        <span>S</span>
+                        <span>i</span>
+                        <span>m</span>
+                        <span>u</span>
+                        <span>l</span>
+                        <span>a</span>
+                        <span>t</span>
+                        <span>i</span>
+                        <span>o</span>
+                        <span>n</span>
+                    </h2>
+                    <div class="equipment-table-container">
+                        <div class="table-header">
+                            <h3>SOFTWARE & TOOLS</h3>
+                            <div class="search-box">
+                                <input type="text" placeholder="Search equipment...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="equipment-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>S.NO.</th>
+                                        <th>NAME OF EQUIPMENT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Altium Designer</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>MATLAB & Simulink</td>
+                                        <td><span class="status-badge in-use">In Use</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>Cadence Virtuoso</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>ANSYS Electronics</td>
+                                        <td><span class="status-badge available">Available</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <button class="book-lab-btn">
+                        <span>BOOK NOW</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+        
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

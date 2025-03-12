@@ -1,0 +1,430 @@
+.career-header {
+    background: linear-gradient(135deg, #000000, #333333);
+    color: white;
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.career-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), transparent);
+    animation: gradientShift 8s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% { transform: translateX(-20%) translateY(-20%); }
+    100% { transform: translateX(20%) translateY(20%); }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+}
+
+.career-header h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.career-header p {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.job-filters {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.search-box {
+    position: relative;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 1.2rem 3.5rem;
+    border: 2px solid #eee;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.9);
+}
+
+.search-box input:focus {
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(255,215,0,0.1);
+    transform: scale(1.01);
+}
+
+.search-box i {
+    position: absolute;
+    left: 1.4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.filter-buttons button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    background: #f8f8f8;
+    color: #444;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+    background: #FFD700;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,215,0,0.2);
+}
+
+.job-listings {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 700px;
+    position: relative;
+}
+
+.job-card {
+    flex: 1;
+    min-width: 380px;
+    max-width: 450px;
+    background: white;
+    border-radius: 30px;
+    padding: 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    display: none;
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.job-card.visible {
+    display: block;
+    animation: slideIn 0.5s ease forwards;
+}
+
+.job-card.hidden {
+    animation: slideOut 0.3s ease forwards;
+}
+
+.job-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    clip-path: polygon(0 0, 100% 0, 100% 60%, 0% 100%);
+    z-index: 1;
+    opacity: 0.9;
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover::after {
+    transform: scaleY(1.05);
+}
+
+.job-header {
+    position: relative;
+    z-index: 2;
+    padding: 2.5rem 2.5rem 1.5rem;
+    color: white;
+}
+
+.job-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.job-type {
+    background: rgba(255,255,255,0.9);
+    color: black;
+    padding: 0.6rem 1.4rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.job-details {
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 30px;
+}
+
+.job-details p {
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.job-tags {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+.job-tags li {
+    background: #f8f8f8;
+    padding: 0.8rem 1.4rem;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    color: #444;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.job-tags li i {
+    color: #FFD700;
+    font-size: 1.1rem;
+}
+
+.job-tags li:hover {
+    background: #FFD700;
+    color: black;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(255,215,0,0.2);
+}
+
+.job-tags li:hover i {
+    color: black;
+}
+
+.apply-butn {
+    width: 90%;
+    margin: 0 auto 2.5rem;
+    padding: 1.3rem;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.apply-butn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+}
+
+.apply-butn:hover::before {
+    left: 100%;
+}
+
+.apply-butn:hover {
+    background: #FFD700;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(255,215,0,0.3);
+}
+
+.apply-butn i {
+    transition: transform 0.3s ease;
+}
+
+.apply-butn:hover i {
+    transform: translateX(5px);
+}
+
+/* Why Join Us Section */
+.why-join-us {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 6rem 2rem;
+    margin-top: 4rem;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.benefits-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.benefit-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .job-listings {
+        gap: 2rem;
+        min-height: 800px;
+    }
+    
+    .job-card {
+        min-width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .career-header h1 {
+        font-size: 2.8rem;
+    }
+    
+    .career-header p {
+        font-size: 1.2rem;
+    }
+
+    .job-listings {
+        min-height: 1200px;
+    }
+    
+    .job-card {
+        min-width: 100%;
+    }
+
+    .filter-buttons {
+        gap: 1rem;
+    }
+
+    .filter-buttons button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .why-join-us {
+        padding: 4rem 1rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+}
