@@ -1,1 +1,0 @@
-# vidya-icube
